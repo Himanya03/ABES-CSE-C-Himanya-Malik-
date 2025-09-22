@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bus Seat Book</title>
+</head>
+<body>
+  <nav style="display: flex; align-items: center; background: #f0f0f0; padding: 10px;">
+    <img src="bus(1).jpg" alt="Logo" style="width:40px; height:40px; margin-right:30px;">
+    <h1 style="margin: 0; font-size: 30px;">Bus Seat Book</h1>
+  </nav>
+
+  <main>
+    <center>
+    <h2>Welcome to Bus Booking System</h2>
+
+    <form style=" align-items: center; background: #f0f0f0; padding: 10px;border-radius: 20px; width: 50%;">
+      <table border="0" cellpadding="10">
+        <tr>
+         
+          <td valign="top">
+            <h3>User Detail</h3>
+
+            <label for="username">User Name</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter your name" required /><br><br>
+
+            <label for="password">User Password</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required /><br><br>
+
+            <label>User Gender</label><br>
+            <label>
+              <input type="radio" name="gender" value="male" required /> Male
+            </label><br>
+            <label>
+              <input type="radio" name="gender" value="female" /> Female
+            </label><br><br>
+
+            <label for="city">User Select City</label><br>
+            <select id="city" name="city" required>
+              <option value="" selected disabled>Select your city</option>
+              <option value="delhi">Delhi</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="bangalore">Bangalore</option>
+              <option value="chennai">Chennai</option>
+            </select>
+          </td>
+
+      
+          <td valign="top" style="padding-left: 50%;">
+
+            <img src="bus(1).jpg" alt="Bus image placeholder" width="180" height="180">
+          </td>
+        </tr>
+      </table>
+
+      <br>
+      <button type="submit">Seat Book</button>
+    </form>
+    </center>
+  </main>
+</body>
+</html>

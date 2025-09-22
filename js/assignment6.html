@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <div style="display:flex; gap:50px;">
+    <div>
+      <div id="t1"></div>
+    </div>
+    <div>
+      <div id="t2"></div>
+    </div>
+  </div>
+
+  <p>even= <span id="even"></span></p>
+  <p>odd= <span id="odd"></span></p>
+
+  <script>
+    var num1 = 2; 
+    var num2 = 3;  
+    var evens = "";
+    var odds = "";
+
+    function makeTable(num, divId) {
+      var str = "";
+      for (var i = 1; i <= 10; i++) {
+        var val = num * i;
+        str +=  val + "<br>";
+        if (val % 2 == 0) evens += val + ",";
+        else odds += val + ",";
+      }
+      document.getElementById(divId).innerHTML = str;
+    }
+
+    makeTable(num1, "t1");
+    makeTable(num2, "t2");
+
+    document.getElementById("even").innerHTML = evens;
+    document.getElementById("odd").innerHTML = odds;
+  </script>
+</body>
+</html>

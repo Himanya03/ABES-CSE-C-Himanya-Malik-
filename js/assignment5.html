@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      height: 100vh;
+      background-color: #f0f0f0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .counter-box, .image-box, .changer-box {
+      width: 300px;
+      height: 300px;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;  
+      object-fit: cover;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .counter {
+      font-size: 40px;
+      margin: 20px 0;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      width: 100px;
+      height: 40px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #1477a5;
+      color: white;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #49d3d8;
+    }
+
+    .image-part {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-part img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .button-part {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-box">
+    <div class="logo-title">
+      <div class="logo">
+        <img src="counter.jpg" alt="Logo">
+      </div>
+      <h2>Counter App</h2>
+    </div>
+    <div class="counter" id="counter">0</div>
+    <div class="buttons">
+      <button onclick="decrease()">-</button>
+      <button onclick="increase()">+</button>
+    </div>
+  </div>
+
+  <div class="image-box">
+    <div class="image-part">
+      <img src="img1.jpg" id="toggleImage" alt="Sample Image">
+    </div>
+    <div class="button-part">
+      <button onclick="toggleImage()">Hide</button>
+    </div>
+  </div>
+
+  <div class="changer-box">
+    <div class="image-part">
+      <img src="img2.webp" id="changeImage" alt="Image Changer">
+    </div>
+    <div class="button-part">
+      <button onclick="changeImage()">Change</button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    const counterElement = document.getElementById('counter');
+
+    function increase() {
+      if (count >= 10) {
+        alert("Maximum limit");
+      } else {
+        count++;
+        counterElement.innerText = count;
+      }
+    }
+
+    function decrease() {
+      if (count <= 0) {
+        alert("Minimum limit");
+      } else {
+        count--;
+        counterElement.innerText = count;
+      }
+    }
+
+    function toggleImage() {
+      const img = document.getElementById("toggleImage");
+      const btn = event.target;
+      if (img.style.display === "none") {
+        img.style.display = "block";
+        btn.innerText = "Hide";
+      } else {
+        img.style.display = "none";
+        btn.innerText = "Show";
+      }
+    }
+
+    const images = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg"];
+    let currentIndex = 0;
+
+    function changeImage() {
+      const img = document.getElementById("changeImage");
+      currentIndex = (currentIndex + 1) % images.length;
+      img.src = images[currentIndex];
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .card {
+      border: 2px solid #333;
+      border-radius: 10px;
+      padding: 15px;
+      width: 250px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .student {
+      margin: 8px 0;
+      padding: 6px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="matched">
+    <h2>Matched Branch (IT)</h2>
+  </div>
+
+  <div class="card" id="unmatched">
+    <h2>Unmatched Branch</h2>
+  </div>
+
+  <script>
+    let students = [
+      { "student": "Himanya", "rollno": 106, "branch": "CSE" },
+      { "student": "Kartik Malik", "rollno": 115, "branch": "IT" },
+      { "student": "Jiya", "rollno": 112, "branch": "CS" },
+      { "student": "Devansh", "rollno": 107, "branch": "IT" },
+      { "student": "Kartik Chaudhary", "rollno": 114, "branch": "IT" }
+    ];
+
+    var matchedDiv = document.getElementById("matched");
+    var unmatchedDiv = document.getElementById("unmatched");
+
+    for (var i = 0; i < students.length; i++) {
+      var s = students[i];
+      var info = "<div class='student'>" + s.student + " (" + s.rollno + ", " + s.branch + ")</div>";
+
+      if (s.branch == "IT") {
+        matchedDiv.innerHTML += info;
+      } else {
+        unmatchedDiv.innerHTML += info;
+      }
+    }
+  </script>
+</body>
+</html>
