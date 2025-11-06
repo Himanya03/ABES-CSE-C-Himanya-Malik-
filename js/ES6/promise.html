@@ -1,0 +1,35 @@
+<!-- m1=promise(resolve,reject)
+    {
+
+    }
+    m1.then()           //true
+    m1.catch()          //false -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <script>
+        const mypromise=new Promise((resolve,reject)=>{
+            const password="himanya@123";
+            if(password.length>8){
+                resolve("password length is ok");
+            }
+            else {
+                reject("password length is short");
+            }            
+        })
+        mypromise.then((msg)=>{
+            console.log(msg);
+
+        })
+        mypromise.catch((err)=>{
+            console.log(err);
+        })
+    </script>
+    
+
+</body>
+</html>

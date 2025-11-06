@@ -1,0 +1,27 @@
+<!-- async function a()
+ {
+    await 
+ }
+ a() -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <script>
+        async function f()
+        {
+            let promise=new Promise((resolve,reject)=>{
+                setTimeout(()=> resolve("DONE"),2000)
+            });
+            let result= await promise;
+            alert(result);
+        }
+        f();
+    </script>
+
+    
+</body>
+</html>
